@@ -66,9 +66,32 @@ The codes that  create this plot start with the code block beginning with dd2. d
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=females)
+rowPerc(table1)
+colPerc(table1)
+```
+
+
+Among the women that got aids about 59% had taken the vaccine and about 41% had taken the placebo. The odds illustated in this table are  approximately 59 to 41. The odds of getting aids is about 59 to 41. This further proves how ineffective the drug is.Females who took the drug were about 18 percent more likely to get aids than those who only took the placebo.
+
+
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+The p- value is 0.00006.596. This in an incredibly smalll number. The conclusion is that these results are unlikely to occur by chance.
+
+The Fishers's Exact Test illustrates that the odds ratio is 1.54.
+If the odds ratio is 1, that means theres nothing going on. The null hypothesis is rejected in favor the the alternative. The drug is not effective in redicting the chances of getting aids in females.
+
+
 
 
 # Discussion and Conclusion
