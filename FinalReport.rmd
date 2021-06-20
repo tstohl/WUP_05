@@ -9,6 +9,7 @@ output: html_document
 require(tidyverse)
 require(tigerstats)
 triUmp <-read.csv(file="triUmpsal.csv",header=TRUE)
+females = filter(triUmp, gender =="F")
 ```
 
 # Introduction
@@ -16,6 +17,10 @@ triUmp <-read.csv(file="triUmpsal.csv",header=TRUE)
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?.  If you skimp in this section expect to be marked down in your grade. Paint a picture of the project a couple of paragraphs is expected!-->
 
 A new  preventative aides drug (triUmpsal) is under test in clinical trials. Consider only the females, does this drug seem effective?  Hint - use dplyr to obtain that subpopulation with the filter command.
+
+#Introduction:
+
+In this project, the goal is to show the results of the new preventative aids drug called triUmpsal in ONLY the females. The first step is to decide what helper file to use. Since treatment and infected are both categorical data, the Cat~Cat helper file is used. Next, the data has to be adjusted to only select only the female sub-set. To only select the females from the triUmp data set, a dplyr code was created to specifically select this data. Also, the data results need to be put into a percentage plot to make it easier to read.
 
 # Methods
 
@@ -30,6 +35,25 @@ A new  preventative aides drug (triUmpsal) is under test in clinical trials. Con
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
+```{r}
+dd2 <- females %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+  
+
+The graph shown is the percentage plot. The left two bars of the graph are all the people that got aids. a shocking 60% of the people that got aids received the drug, while only 40% that took the placebo got aids. These results show that the drug is  completely ineffective. 
+
 
 ### Numerical Descriptive Results
 
