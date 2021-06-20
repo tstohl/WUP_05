@@ -89,7 +89,11 @@ fisher.test(table1)
 The p- value is 0.00006.596. This in an incredibly smalll number. The conclusion is that these results are unlikely to occur by chance.
 
 The Fishers's Exact Test illustrates that the odds ratio is 1.54.
-If the odds ratio is 1, that means theres nothing going on. The null hypothesis is rejected in favor the the alternative. The drug is not effective in redicting the chances of getting aids in females.
+Women who got the drug were about 1.54 times more likely to get aids than women that only took the placebo.
+
+The null hypothesis is rejected in favor the the alternative. The drug is not effective in reducing the chances of getting aids in females.
+
+
 
 
 
@@ -97,3 +101,13 @@ If the odds ratio is 1, that means theres nothing going on. The null hypothesis 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+The drug TriUmpsal was not effective in protecting women against contracting aids. The odds ratio turned out to be 1.54. Women that reciced the drug were 1.54 times more likely to get aids than women that only received the placebo. The p-value is a tiny number, 0.000596, which means that these results are very unlikely to occur by chance. Women who took the placebo were better off than those that took the drug triUmpsal.
+This drug failed the clinical trial, it was found to not be effective.
+
+ The Cat~Cat helper file was used to assist this project. A code to select only women from the triUmp data set was also used. 
+
+
+
+
+
