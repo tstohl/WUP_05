@@ -20,11 +20,13 @@ A new  preventative aides drug (triUmpsal) is under test in clinical trials. Con
 
 #Introduction:
 
-In this project, the goal is to show the results of the new preventative aids drug called triUmpsal in ONLY the females. The first step is to decide what helper file to use. Since treatment and infected are both categorical data, the Cat~Cat helper file is used. Next, the data has to be adjusted to only select only the female sub-set. To only select the females from the triUmp data set, a dplyr code was created to specifically select this data. Also, the data results need to be put into a percentage plot to make it easier to read.
+In this project, the goal is to show the results of the new preventative aids drug called triUmpsal in ONLY the females. The first step is to decide what helper file to use. Since treatment and infected are both categorical data, the Cat~Cat helper file is used. Next, the data has to be adjusted to only select only the female sub-set. To only select the females from the triUmp data set, a dplyr code was created to specifically select this data. Also, the data results need to be put into a percentage plot to make it easier to read. Line 11 is a code that inputs all data totaling 2173 results. Line 12 is the code to only select the females. This data contains only 11768 results, about half of the data is triUmp. 
 
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+
 
 # Results
 
@@ -50,9 +52,14 @@ basicC + geom_bar(stat="identity",position="dodge")
 basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
-  
 
-The graph shown is the percentage plot. The left two bars of the graph are all the people that got aids. a shocking 60% of the people that got aids received the drug, while only 40% that took the placebo got aids. These results show that the drug is  completely ineffective. 
+
+There are two plots. In first plot,the x-axis represents infected, whether the participants were infected with aids or they were not. The y-axis represents the count, or number of people that got aids or didn't get aids. 
+
+In the second plot, the one above, The The left two bars of the graph are all the people that got aids. The x-axis represents whether a person got aids or not. The y-axis, however, instead of representing the number of people who got aids, now represents the percentage of people that got aids after taking the the placebo or taking the drug triUmpal. the plot shows that  a shocking 60% of people that took the drug got aids, while only 40% of the people that recieved the placebo got aids. The odds of getting aids while taking the drug to 3:2.The drug appears to be  completely ineffective.60% of people that took the vaccine got aids and 40% did not. You are one and ahlf times more likely to get aids if you take the drug.
+
+
+The codes that  create this plot start with the code block beginning with dd2. dd2 can be seen in the environment pane and if inspected contains 4 variables.These varibales include infected, treatment, count, and prcent(stands for percent). The second group of codes is called the basicC. BasicC can also be seen in the environment pane and appears to contain a list of 9 variables. This information creates the first plot. The basicCC is the last bunch of codes and is also in the files pane. It also contains 9 variables and helps to create the percentage plot, the second plot.
 
 
 ### Numerical Descriptive Results
